@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "69106829-13fc-4efb-8161-9ee37113aca1",
+		"name": "Newsletter2Go",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/special_offer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"Summer Discount\",\n\t\"discount\": 10,\n\t\"expiration_date\": \"2018-09-26\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/special_offers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"special_offers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/validate_voucher_code",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"voucher_code\": \"0ADCFCB16D\",\n\t\"email\": \"juan@gmail.com\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/validate_voucher_code",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"validate_voucher_code"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/voucher_codes?email=test@test.com",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"url": {
+					"raw": "http://localhost:8080/voucher_codes?email=test@test.com",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"voucher_codes"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "test@test.com"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
